@@ -16,6 +16,5 @@ export async function getLayoutContent() {
   const response = await client.getEntries({ content_type: "layout" });
 
   const data = response.items[0].fields;
-  console.log("data", data, "data")
   return data;
 }

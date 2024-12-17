@@ -1,24 +1,25 @@
-import { getAboutUsContent } from "@/lib/contentful";
-
-export default async function VisionMission({ images }) {
-  const data = await getAboutUsContent();
+export default async function VisionMission({ data }) {
 
   const visionMission = {
-    leftimage: data.visionMission.fields.leftImage.fields.file.url,
+    leftimage: "https:" + data.visionMission.fields.leftImage.fields.file.url,
     lefttitle: data.visionMission.fields.leftTitle,
     leftdescription: data.visionMission.fields.leftDescription,
-    rightimage: data.visionMission.fields.rightImage.fields.file.url,
+    rightimage: "https:" + data.visionMission.fields.rightImage.fields.file.url,
     righttitle: data.visionMission.fields.rightTitle,
     rightdescription: data.visionMission.fields.rightDescription
   }
   return (
     <section className="visionMission">
-      <div>{visionMission.leftimage}</div>
-      <h1>{visionMission.lefttitle}</h1>
-      <p>{visionMission.leftdescription}</p>
-      <div>{visionMission.rightimage}</div>
-      <h2>{visionMission.righttitle}</h2>
-      <p>{visionMission.rightdescription}</p>
+      <div>
+        <img src={visionMission.leftimage} alt="leftImage" />
+        <h1>{visionMission.lefttitle}</h1>
+        <p>{visionMission.leftdescription}</p>
+      </div>
+      <div>
+        <img src={visionMission.rightimage} alt="rightImage" />
+        <h2>{visionMission.righttitle}</h2>
+        <p>{visionMission.rightdescription}</p>
+      </div>
     </section>
   )
 }

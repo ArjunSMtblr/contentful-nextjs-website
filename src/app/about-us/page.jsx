@@ -5,13 +5,13 @@ import VisionMission from "@/components/VisionMission";
 
 export default async function aboutUsPage() {
   const data = await getAboutUsContent();
+  console.log("Contentful Data:", data);
+
   return (
-    <html lang="en">
-      <body>
-        <TopSection />
-        <MainContent />
-        <VisionMission />
-      </body>
-    </html>
+    <div>
+      <TopSection data={data} />
+      <MainContent data={data} />
+      <VisionMission data={data} />
+    </div>
   );
 }
