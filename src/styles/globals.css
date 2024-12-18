@@ -1,14 +1,84 @@
-.top-section img {
-  max-width: 100%;
-  height: auto;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
 }
 
-.main-content img {
-  width: 100%;
-  height: auto;
+body {
+  overflow-x: hidden;
 }
 
-.visionMission img {
-  max-width: 100%;
-  height: auto;
+span,a {
+  font-family: var(--font-roboto);
 }
+
+h3,p,h1,h2,h4,h5,h6 {
+    font-family: var(--font-inter);
+}
+
+@media screen and (max-width:767px) {
+  .tailwind-container {
+    max-width: 90% !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .tailwind-container {
+    max-width: 80% !important;
+  }
+}
+
+@media screen and (min-width: 1024) {
+  .tailwind-container {
+    max-width: 60% !important;
+  }
+}
+
+.slickDotsDivWidth { 
+    width: 50px !important;
+    /* width: 120px !important; */
+ }
+ 
+ .slickDotsDivWidthOne li { 
+   width: 20px !important;
+   /* width: 120px !important; */
+ }
+ 
+ .slickDotsDivWidthTwo {
+   background-color: #FFFFFFD9;
+   height: 100px;
+ }
+ .slickDotsDivWidthTwo li { 
+   /* width: 50px !important; */
+   width: 120px !important;
+ }
+ .slider .slick-slide {
+   padding: 0 10px; 
+   padding-left: 0px !important;
+ }
+ 
+ .slick-list {
+   margin: 0 -10px; 
+ } 
+ 
+ 
+ @media screen and (max-width: 600px) { 
+   .slick-dots li { 
+     width: 20px !important;
+  }
+
+  .slick-dots{
+    position:relative !important;
+    bottom:0px !important;
+  }
+ }
+ 
+ [dir='rtl'] .slick-next {
+   right: auto;
+   left: auto !important;
+ }
+
+
+

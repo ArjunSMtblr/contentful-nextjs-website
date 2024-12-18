@@ -13,7 +13,7 @@ export async function getAboutUsContent() {
 }
 
 export async function getLayoutContent() {
-  const response = await client.getEntries({ content_type: "layout" });
+  const response = await client.getEntries({ content_type: "layout", include: 10 });
 
   const data = response.items[0].fields;
   return data;

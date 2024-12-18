@@ -9,17 +9,35 @@ export default async function VisionMission({ data }) {
     rightdescription: data.visionMission.fields.rightDescription
   }
   return (
-    <section className="visionMission">
-      <div>
-        <img src={visionMission.leftimage} alt="leftImage" />
-        <h1>{visionMission.lefttitle}</h1>
-        <p>{visionMission.leftdescription}</p>
+    <div className="bg-[#BCD9F0] py-10 2xl:py-20">
+      <div className="mx-auto w-full relative z-10 tailwind-container">
+        <div className="md:flex -mx-3 flex-wrap">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div className="text-left">
+              <figure className="mb-8">
+                <img src={visionMission.leftimage} />
+              </figure>
+              <div>
+                <p className="my-4  font-bold text-3xl">{visionMission.lefttitle}</p>
+                <span className="mt-2 mb-0 opacity-70 text-base">
+                  {visionMission.leftdescription}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <figure className="mb-8">
+              <img src={visionMission.rightimage} />
+            </figure>
+            <p className="my-4 text-3xl font-bold">{visionMission.righttitle}</p>
+            <span className="mt-2 mb-0 opacity-70 text-base">
+              {visionMission.rightdescription}
+            </span>
+          </div>
+        </div>
       </div>
-      <div>
-        <img src={visionMission.rightimage} alt="rightImage" />
-        <h2>{visionMission.righttitle}</h2>
-        <p>{visionMission.rightdescription}</p>
-      </div>
-    </section>
+    </div>
+
   )
 }
